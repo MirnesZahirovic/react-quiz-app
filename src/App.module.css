@@ -1,0 +1,21 @@
+.app {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.logo {
+  font-size: 2rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 5rem;
+}
+
+.questionNumber {
+  color: white;
+  font-size: 1.5rem;
+}
