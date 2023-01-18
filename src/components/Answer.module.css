@@ -17,8 +17,42 @@
   transition: 300ms;
 }
 
+.correct {
+  background-color: rgb(73, 255, 104);
+}
+
+.incorrect {
+  background: rgb(235, 46, 46);
+}
+
+.inactive {
+  cursor: none;
+  opacity: 50%;
+}
+
+.inactive:hover {
+  background-color: inherit;
+}
+
 @media screen and (max-width: 500px) {
   .answer {
     width: 100%;
+  }
+
+  .answer:hover {
+    background-color: inherit;
+    animation: backgroundColorAnimation 500ms ease-in-out;
+  }
+}
+
+@keyframes backgroundColorAnimation {
+  0% {
+    background-color: inherit;
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.192);
+  }
+  100% {
+    background-color: inherit;
   }
 }

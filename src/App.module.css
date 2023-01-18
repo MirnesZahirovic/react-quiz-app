@@ -6,6 +6,7 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  text-align: center;
 }
 
 .logo {
@@ -18,4 +19,22 @@
 .questionNumber {
   color: white;
   font-size: 1.5rem;
+}
+
+.messageCorrect {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(49, 211, 49);
+}
+
+.messageIncorrect {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: red;
+}
+
+.winMessage {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(43, 219, 43);
 }
