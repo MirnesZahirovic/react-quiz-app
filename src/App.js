@@ -14,12 +14,43 @@ const questions = [
     ],
   },
   {
-    question: "What is capital city of Bosnia?",
+    question:
+      " Which Disney character famously leaves a glass slipper behind at a royal ball?",
     answers: [
-      { id: "a1", answer: "Sarajevo", correct: false },
-      { id: "a2", answer: "Madrid", correct: false },
-      { id: "a3", answer: "Paris", correct: true },
-      { id: "a4", answer: "Budapest", correct: false },
+      { id: "a1", answer: "Pocahontas", correct: false },
+      { id: "a2", answer: "Sleeping Beauty", correct: false },
+      { id: "a3", answer: "Cinderella", correct: true },
+      { id: "a4", answer: "Elsa", correct: false },
+    ],
+  },
+  {
+    question:
+      " Which of these brands was chiefly associated with the manufacture of household locks?",
+    answers: [
+      { id: "a1", answer: "Philips", correct: false },
+      { id: "a2", answer: "Flymo", correct: false },
+      { id: "a3", answer: "Chubb", correct: true },
+      { id: "a4", answer: "Ronseal", correct: false },
+    ],
+  },
+  {
+    question:
+      " Construction of which of these famous landmarsk was completed first?",
+    answers: [
+      { id: "a1", answer: "Empire State Building", correct: false },
+      { id: "a2", answer: "Royal Albert Hall", correct: false },
+      { id: "a3", answer: "Eiffel Tower", correct: true },
+      { id: "a4", answer: "Big Ben Clock Tower", correct: false },
+    ],
+  },
+  {
+    question:
+      " In 1718, which pirate died in battle of the coast of what is now North Carolina?",
+    answers: [
+      { id: "a1", answer: "Calico Jack", correct: false },
+      { id: "a2", answer: "Blackbeard", correct: false },
+      { id: "a3", answer: "Bartholomew Roberts", correct: true },
+      { id: "a4", answer: "Captain Kidd", correct: false },
     ],
   },
 ];
