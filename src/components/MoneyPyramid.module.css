@@ -1,29 +1,18 @@
-.app {
-  display: flex;
-  height: 100vh;
-}
-
-.main {
-  flex-basis: 75%;
-  background: linear-gradient(
-      0deg,
-      rgba(19, 16, 109, 0.932) 0%,
-      rgba(0, 212, 255, 0) 100%
-    ),
-    url("./assets//images/background.webp");
-  background-position: center;
-  background-size: cover;
-}
-
 .moneyPyramid {
   display: flex;
+  height: 100%;
   flex-direction: column;
-  justify-content: center;
+  margin-top: auto;
   padding: 1rem;
   flex-basis: 25%;
   background-color: #13106d;
   color: white;
+  overflow: scroll;
 }
+
+/* .moneyPyramid::-webkit-scrollbar {
+  display: none;
+} */
 
 .moneyList {
   list-style: none;
