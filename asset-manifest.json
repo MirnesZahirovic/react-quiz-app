@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/react-quiz-app/static/css/main.f40cd93f.css",
-    "main.js": "/react-quiz-app/static/js/main.a9507b72.js",
+    "main.css": "/react-quiz-app/static/css/main.80434d67.css",
+    "main.js": "/react-quiz-app/static/js/main.a5e7bf35.js",
+    "static/js/845.d405e7c8.chunk.js": "/react-quiz-app/static/js/845.d405e7c8.chunk.js",
+    "static/media/background.webp": "/react-quiz-app/static/media/background.4fc3701a70b87ca77bf6.webp",
+    "static/media/lets-play.mp3": "/react-quiz-app/static/media/lets-play.8e5f6d1d81d4e1414b95.mp3",
+    "static/media/correct-answer.mp3": "/react-quiz-app/static/media/correct-answer.160572d72c858155072e.mp3",
+    "static/media/wrong-answer.mp3": "/react-quiz-app/static/media/wrong-answer.e946821894ae9b0a0d6f.mp3",
     "index.html": "/react-quiz-app/index.html",
-    "main.f40cd93f.css.map": "/react-quiz-app/static/css/main.f40cd93f.css.map",
-    "main.a9507b72.js.map": "/react-quiz-app/static/js/main.a9507b72.js.map"
+    "main.80434d67.css.map": "/react-quiz-app/static/css/main.80434d67.css.map",
+    "main.a5e7bf35.js.map": "/react-quiz-app/static/js/main.a5e7bf35.js.map",
+    "845.d405e7c8.chunk.js.map": "/react-quiz-app/static/js/845.d405e7c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f40cd93f.css",
-    "static/js/main.a9507b72.js"
+    "static/css/main.80434d67.css",
+    "static/js/main.a5e7bf35.js"
   ]
 }
