@@ -1,14 +1,19 @@
 import React from "react";
 import classes from "./Question.module.css";
-import Questions from "./Questions";
 import { useState } from "react";
 import useSound from "use-sound";
 import correctAnswer from "../assets/sounds/correct-answer.mp3";
 import wrongAnswer from "../assets/sounds/wrong-answer.mp3";
 
-const questions = Questions;
-
-function Question({ qn }) {
+function Question({
+  question,
+  nextQuestion,
+  tq,
+  qn,
+  setEndGame,
+  setMessage,
+  endGame,
+}) {
   const [answerClasses, setAnswerClasses] = useState(classes.answer);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [wrongAnswerSound] = useSound(wrongAnswer);
@@ -25,19 +30,33 @@ function Question({ qn }) {
       );
       setTimeout(() => {
         a.correct ? correctAnswerSound() : wrongAnswerSound();
+        setTimeout(() => {
+          if (qn < tq) {
+            a.correct && nextQuestion();
+            if (!a.correct) {
+              setEndGame(true);
+              setMessage("Your answer is wrong! You lost!");
+            }
+          } else {
+            setEndGame(true);
+            a.correct
+              ? setMessage("Congrulations! You are now millionare!")
+              : setMessage("Your answer is wrong! You lost!");
+          }
+        }, 2000);
       }, 1000);
     }, 2000);
   };
   return (
     <div className={classes.questionWrapper}>
-      <div className={classes.question}>{questions[qn].question} </div>
+      <div className={classes.question}>{question.question} </div>
       <div className={classes.answers}>
-        {questions[qn].answers.map((a) => (
+        {question.answers.map((a) => (
           <div
             className={selectedAnswer === a ? answerClasses : classes.answer}
             key={a.id}
             onClick={(e) => {
-              checkAnswer(a);
+              !endGame && checkAnswer(a);
             }}
           >
             {a.answer}

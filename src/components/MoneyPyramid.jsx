@@ -63,24 +63,25 @@ const data = [
   },
 ].reverse();
 
-const listClasses = `${classes.moneyListItem} ${classes.active}`;
+const activeItem = `${classes.moneyListItem} ${classes.active}`;
 
-function MoneyPyramid() {
+function MoneyPyramid({ qn }) {
   return (
     <div className={classes.moneyPyramid}>
       <ul className={classes.moneyList}>
         {data.map((amount) => (
-          <li className={classes.moneyListItem} key={amount.number}>
+          <li
+            className={
+              qn + 1 === amount.number ? activeItem : classes.moneyListItem
+            }
+            key={amount.number}
+          >
             <span className={classes.number}>{amount.number}</span>{" "}
             <span className={classes.amount}>
               {amount.amount.toLocaleString()}$
             </span>
           </li>
         ))}
-        <li className={listClasses}>
-          <span className={classes.number}>1</span>{" "}
-          <span className={classes.amount}>100$</span>
-        </li>
       </ul>
     </div>
   );

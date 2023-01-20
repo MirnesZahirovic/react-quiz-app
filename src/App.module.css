@@ -58,10 +58,19 @@
 
 .clock {
   font-size: 2rem;
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
   border: 5px solid #e18c1d;
   border-radius: 50%;
   background-color: #13106dab;
+}
+
+.message {
+  color: #e18c1d;
+  font-size: 1.5rem;
 }
 
 .game {
