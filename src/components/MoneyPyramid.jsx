@@ -63,6 +63,8 @@ const data = [
   },
 ].reverse();
 
+const listClasses = `${classes.moneyListItem} ${classes.active}`;
+
 function MoneyPyramid() {
   return (
     <div className={classes.moneyPyramid}>
@@ -70,9 +72,15 @@ function MoneyPyramid() {
         {data.map((amount) => (
           <li className={classes.moneyListItem} key={amount.number}>
             <span className={classes.number}>{amount.number}</span>{" "}
-            <span className={classes.amount}>{amount.amount}</span>
+            <span className={classes.amount}>
+              {amount.amount.toLocaleString()}$
+            </span>
           </li>
         ))}
+        <li className={listClasses}>
+          <span className={classes.number}>1</span>{" "}
+          <span className={classes.amount}>100$</span>
+        </li>
       </ul>
     </div>
   );

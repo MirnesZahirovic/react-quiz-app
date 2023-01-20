@@ -2,7 +2,6 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  margin-top: auto;
   padding: 1rem;
   flex-basis: 25%;
   background-color: #13106d;
@@ -10,15 +9,16 @@
   overflow: scroll;
 }
 
-/* .moneyPyramid::-webkit-scrollbar {
+.moneyPyramid::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .moneyList {
   list-style: none;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
+  margin-top: auto;
 }
 
 .moneyListItem {
@@ -30,7 +30,9 @@
 }
 
 .moneyListItem.active {
-  border: 1px solid #e18c1d;
+  border: 2px solid #e18c1d;
+  border-radius: 5px;
+  background: #070541;
 }
 
 .number {
