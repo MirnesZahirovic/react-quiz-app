@@ -16,7 +16,7 @@ const moneyLevels = [
   { number: "13", amount: 250000 },
   { number: "14", amount: 500000 },
   { number: "15", amount: 1000000 },
-].reverse();
+];
 
 const MoneyPyramid = ({ aq }) => {
   return (
@@ -33,7 +33,7 @@ const MoneyPyramid = ({ aq }) => {
           >
             <span className={classes.qn}>{level.number}</span>
             <span className={classes.amount}>
-              {level.amount.toLocaleString()} €
+              {level.amount.toLocaleString()} <span> €</span>
             </span>
           </li>
         ))}

@@ -1,16 +1,34 @@
 import classes from "./Answers.module.css";
 import questions from "./Questions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Answers = ({ aq, setAq, setIsClicked, setGameOver, gameOver }) => {
+const Answers = ({
+  aq,
+  setAq,
+  setIsClicked,
+  setGameOver,
+  gameOver,
+  setMessage,
+  startedAgain,
+}) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [classNames, setClassNames] = useState(classes.answer);
 
   const nextQuestion = () => {
-    setAq((prev) => prev + 1);
-    setSelectedAnswer(null);
-    setIsClicked(false);
+    if (aq < 14) {
+      setAq((prev) => prev + 1);
+      setSelectedAnswer(null);
+      setIsClicked(false);
+    } else {
+      setGameOver(true);
+      setMessage("You are now millionaire! Congrulations! 🎉");
+    }
   };
+
+  useEffect(() => {
+    setSelectedAnswer(null);
+    setClassNames(classes.answer);
+  }, [startedAgain]);
 
   const checkAnswer = (answer) => {
     if (answer.correct) {
@@ -20,7 +38,9 @@ const Answers = ({ aq, setAq, setIsClicked, setGameOver, gameOver }) => {
       }, 1000);
     } else {
       setClassNames(`${classes.answer} ${classes.wrong}`);
+      setMessage("Your answer is wrong! You lost the game!");
       setGameOver(true);
+      setIsClicked(false);
     }
   };
 
@@ -29,7 +49,20 @@ const Answers = ({ aq, setAq, setIsClicked, setGameOver, gameOver }) => {
     setClassNames(`${classes.answer} ${classes.active}`);
     setTimeout(() => {
       checkAnswer(answer);
-    }, 3000);
+    }, 2000);
+  };
+
+  const putClasses = (a) => {
+    if (gameOver) {
+      setTimeout(() => {
+        return classes.inactive;
+      }, 1000);
+    }
+    if (selectedAnswer === a.id) {
+      return classNames;
+    } else {
+      return classes.answer;
+    }
   };
 
   return (
@@ -37,7 +70,7 @@ const Answers = ({ aq, setAq, setIsClicked, setGameOver, gameOver }) => {
       {questions[aq].answers.map((a) => (
         <div
           key={a.id}
-          className={selectedAnswer === a.id ? classNames : classes.answer}
+          className={putClasses(a)}
           onClick={(e) => {
             if (!gameOver) {
               setSelectedAnswer(a.id);

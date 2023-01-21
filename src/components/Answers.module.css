@@ -34,11 +34,11 @@
 }
 
 .answer.correct {
-  background-color: #25693e;
+  background-color: #25693e !important;
 }
 
 .answer.wrong {
-  background-color: rgb(207, 31, 31);
+  background-color: rgb(207, 31, 31) !important;
 }
 
 .answer.active {
@@ -55,5 +55,16 @@
   60%,
   100% {
     background-color: #e18c1d;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .answer {
+    font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .answer:hover {
+    background-color: initial;
   }
 }

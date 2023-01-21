@@ -375,7 +375,7 @@ const questions = [
       {
         id: "a1",
         answer: "Bull Moose",
-        correct: false,
+        correct: true,
       },
       {
         id: "a2",

@@ -14,3 +14,37 @@
   color: white;
   gap: 2rem;
 }
+
+.message {
+  font-size: 1.5rem;
+  color: rgb(207, 31, 31);
+  background-color: #e18c1d;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(207, 31, 31);
+  border-radius: 5px;
+}
+
+.startAgain {
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #e18c1d;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  color: 13106d;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    flex-basis: 90%;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .startAgain {
+    font-size: 1rem;
+  }
+}

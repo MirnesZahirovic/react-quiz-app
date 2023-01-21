@@ -6,8 +6,14 @@ import { useState } from "react";
 
 const Main = ({ aq, setAq, gameOver, setGameOver }) => {
   const [isClicked, setIsClicked] = useState(false);
-
+  const [startedAgain, setStartedAgain] = useState(1); // This is only for useEffect
   const [message, setMessage] = useState();
+
+  const startAgain = () => {
+    setAq(0);
+    setGameOver(false);
+    setStartedAgain((prev) => prev + 1);
+  };
 
   return (
     <div className={classes.main}>
@@ -17,9 +23,10 @@ const Main = ({ aq, setAq, gameOver, setGameOver }) => {
           aq={aq}
           isClicked={isClicked}
           setMessage={setMessage}
+          gameOver={gameOver}
         />
       ) : (
-        message
+        <div className={classes.message}>{message}</div>
       )}
       <Question aq={aq} />
       <Answers
@@ -28,7 +35,14 @@ const Main = ({ aq, setAq, gameOver, setGameOver }) => {
         setIsClicked={setIsClicked}
         setGameOver={setGameOver}
         gameOver={gameOver}
+        setMessage={setMessage}
+        startedAgain={startedAgain}
       />
+      {gameOver && (
+        <button className={classes.startAgain} onClick={startAgain}>
+          Start again
+        </button>
+      )}
     </div>
   );
 };
