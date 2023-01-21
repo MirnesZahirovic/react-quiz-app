@@ -1,52 +1,31 @@
 .moneyPyramid {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  padding: 1rem;
-  flex-basis: 25%;
   background-color: #13106d;
+  flex-basis: 20%;
   color: white;
-  overflow: scroll;
-}
-
-.moneyPyramid::-webkit-scrollbar {
-  display: none;
+  border-left: 1px solid #e18c1d;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2rem;
 }
 
 .moneyList {
   list-style: none;
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
+  width: 100%;
 }
 
-.moneyListItem {
+.listItem {
   width: 100%;
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 400;
   padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
 }
 
-.moneyListItem.active {
-  border: 2px solid #e18c1d;
+.listItem.active {
+  background-color: #5f449e;
   border-radius: 5px;
-  background: #070541;
-}
-
-.number {
-  width: 2rem;
-  text-align: center;
-}
-
-@media screen and (max-width: 1000px) {
-  .moneyList {
-    font-size: 1rem;
-    gap: 0.2rem;
-  }
-
-  .moneyListItem {
-    padding: 0.2rem 1rem;
-  }
+  border: 2px solid #e18c1d;
 }
