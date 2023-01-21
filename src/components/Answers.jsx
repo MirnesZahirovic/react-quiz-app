@@ -1,6 +1,10 @@
 import classes from "./Answers.module.css";
 import questions from "./Questions";
 import { useEffect, useState } from "react";
+import useSound from "use-sound";
+import correctAnswerSound from "../assets/sounds/correct-answer.mp3";
+import wrongAnswerSound from "../assets/sounds/wrong-answer.mp3";
+import startSound from "../assets/sounds/lets-play.mp3";
 
 const Answers = ({
   aq,
@@ -13,6 +17,9 @@ const Answers = ({
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [classNames, setClassNames] = useState(classes.answer);
+  const [playCorrectAnswer] = useSound(correctAnswerSound);
+  const [playWrongAnswer] = useSound(wrongAnswerSound);
+  const [playStartSound] = useSound(startSound);
 
   const nextQuestion = () => {
     if (aq < 14) {
@@ -28,16 +35,19 @@ const Answers = ({
   useEffect(() => {
     setSelectedAnswer(null);
     setClassNames(classes.answer);
+    playStartSound();
   }, [startedAgain]);
 
   const checkAnswer = (answer) => {
     if (answer.correct) {
       setClassNames(`${classes.answer} ${classes.correct}`);
+      playCorrectAnswer();
       setTimeout(() => {
         nextQuestion();
-      }, 1000);
+      }, 2000);
     } else {
       setClassNames(`${classes.answer} ${classes.wrong}`);
+      playWrongAnswer();
       setMessage("Your answer is wrong! You lost the game!");
       setGameOver(true);
       setIsClicked(false);

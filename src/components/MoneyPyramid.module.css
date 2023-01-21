@@ -20,6 +20,10 @@
   scroll-margin-top: auto;
 }
 
+.moneyList::-webkit-scrollbar {
+  display: none;
+}
+
 .listItem {
   width: 100%;
   display: flex;
